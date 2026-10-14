@@ -65,7 +65,7 @@ export const server =  http.createServer(async (req, res) => {
             return Object.entries(target).filter( 
                 kv => {
 
-                     let keyinstance =  eval(kv[0]); // I don't want to hear about it. This is why we don't javascript. 
+                     let keyinstance =  eval(kv[0]); 
 
                      return  keyinstance instanceof Function  ? keyinstance(prop) 
                            : keyinstance instanceof RegExp    ? prop.match(new RegExp(kv[0].slice(1, kv[0].length-1))) 
